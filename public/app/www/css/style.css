@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+
+
+h1{
+	text-align: center;
+}
+
+.inicio{
+	background-image: url('../img/background.jpg');
+	background-size: 100% 100%;
+	font-family: "Open Sans";
+}

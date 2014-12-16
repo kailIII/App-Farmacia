@@ -1,0 +1,43 @@
+
+<ion-view title="{{farmacia.nombre}}">
+  <ion-content has-header="true" padding="true">
+
+<ion-nav-bar class="bar-positive nav-title-slide-ios7">
+      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+        Atras
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    
+	<div class="list card">
+		<div class="item item-divider">
+			<center><img src="img/ionic.png"></center>
+		</div>
+	  	<div class="item item-body">
+	  		<div class="item item-divider">
+		  		<h1>{{farmacia.nombre}}</h1> 
+		  	</div>
+		    <ul class="list">
+
+		      <li class="item item-icon-left">
+		        <i class="icon ion-email"></i>
+		        {{farmacia.email}}
+		      </li>
+		      <li class="item item-icon-left">
+		        <i class="icon ion-ios7-telephone"></i>
+		        {{farmacia.telefono}}
+		      </li>
+		      <li class="item item-icon-left">
+		        <i class="icon ion-map"></i>
+		        {{farmacia.direccion}}
+		      </li>
+		      <li class="item item-icon-left">
+		        <i class="icon ion-social-facebook"></i>
+		        {{farmacia.web}}
+		      </li>
+
+		    </ul>
+	  	</div>
+	</div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view title="Farmacias">
+  <ion-content>
+
+    <div class="list">
+	    <a class="item item-thumbnail-left" ng-repeat="farmacia in farmacias" href="#/tab/farmacia/{{farmacia.id}}">
+	      <img src="img/ionic.png">
+	      <h2>{{farmacia.nombre}}</h2>
+	      <p>{{farmacia.descripcion}}</p>
+	    </a>
+	  </div>
+    
+  </ion-content>
+</ion-view>

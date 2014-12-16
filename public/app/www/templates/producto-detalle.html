@@ -1,0 +1,36 @@
+
+<ion-view title="{{producto.nombre}}">
+  <ion-content has-header="true" padding="true">
+
+	<div class="list card">
+		<div class="item item-divider">
+			<center><img src="img/ionic.png"></center>
+		</div>
+	  	<div class="item item-body">
+		  	<h1>{{producto.nombre}}</h1>
+		    <p>
+		      {{producto.descripcion}}
+		    </p>
+	  	</div>
+
+
+	</div>
+	
+  	<h1>Farmacias</h1>
+
+	<div class="list card">
+	  	<div class="item">
+  		    <div class="list">
+			
+  		      <a class="item item-icon-left" ng-repeat="farmacia in farmacias" href="#/tab/farmacia/{{farmacia.id}}">
+  		        <i class="icon ion-beaker"></i>
+  		        {{farmacia.nombre}}
+  		        <span class="badge badge-positive">{{ 12 | currency}}</span>
+  		      </a>
+
+  		    </div>
+	  	</div>
+	</div>
+
+  </ion-content>
+</ion-view>
