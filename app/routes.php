@@ -21,6 +21,7 @@ Route::group(['prefix' => 'api'], function(){
 
 	Route::resource('productos', 'ProductosController');
 	Route::resource('farmacias', 'FarmaciasController');
+	Route::resource('info-productos', 'InfoProductosController');
 	Route::get('busqueda/productos/{valor}', 'ApiController@getProductos');
 
 });

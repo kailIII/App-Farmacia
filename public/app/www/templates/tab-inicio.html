@@ -1,28 +1,29 @@
-<ion-view title="">
+<ion-view title="App-Farm">
     <ion-content class="padding inicio">
 	
 
         <div class="list list-inset">
-          <label class="item item-input">
+          <label class="item item-input" id="buscador">
             <i class="icon ion-search placeholder-icon"></i>
-            <input type="text" placeholder="Busca algo que te haga sentir mejor" ng-model="producto" ng-change="cargarProductos(producto)">
+            <input type="search" placeholder="Busca algo que te haga sentir mejor" ng-model="producto" ng-change="cargarProductos(producto)">
           </label>
         </div>
     	
-        <center ng-show="buscar">
+        <center ng-show="buscar" id="txtPrincipal">
             <i class="icon ion-chevron-up"></i>
-            <h2>¿Te sientes mal?</h2>
-            <img src="img/ionic.png">
-            <h2>Encuentra algo que te haga sentir mejor</h2>
+            <h3><strong>¿Te sientes mal?</strong></h3>
+            <!-- <img src="img/ionic.png"> -->
+            <h3>Encuentra algo que te haga sentir mejor</h3>
         </center>
         
         <div class="list">
-          <a class="item item-thumbnail-left" ng-repeat="producto in productos" href="#/tab/producto/{{producto.id}}">
-            <img src="img/ionic.png">
+          <a class="item item-icon-left producto" ng-repeat="producto in productos" href="#/tab/producto/{{producto.id}}">
+            <i style="color:#206025;" class="icon energized ion-medkit"></i>
             <h2>{{producto.nombre}}</h2>
             <p>{{producto.descripcion}}</p>
           </a>
         </div>
+
 
     </ion-content>
 </ion-view>

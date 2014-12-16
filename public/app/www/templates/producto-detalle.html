@@ -16,16 +16,16 @@
 
 	</div>
 	
-  	<h1>Farmacias</h1>
+  	<h3 class="center">Displonible en:</h3 >
 
 	<div class="list card">
 	  	<div class="item">
   		    <div class="list">
 			
-  		      <a class="item item-icon-left" ng-repeat="farmacia in farmacias" href="#/tab/farmacia/{{farmacia.id}}">
+  		      <a class="item item-icon-left" href="#/tab/farmacia/{{producto.farmacia_id}}">
   		        <i class="icon ion-beaker"></i>
-  		        {{farmacia.nombre}}
-  		        <span class="badge badge-positive">{{ 12 | currency}}</span>
+  		        {{producto.farmacia}}
+  		        <span class="badge badge-positive">{{ producto.precio | currency}}</span>
   		      </a>
 
   		    </div>

@@ -2,7 +2,8 @@ angular.module('app.services', [])
 
 .factory('Productos', function ($http, $q) {
 
-var url = "http://localhost:8080/app-farmacia/public/";
+// var url = "http://localhost:8080/App-Farmacia/public/";
+var url = "http://192.168.3.167:8080/App-Farmacia/public/";
 
   return {
     all: function(ruta) {

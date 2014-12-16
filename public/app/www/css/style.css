@@ -1,12 +1,30 @@
 /* Empty. Add your own CSS if you like */
 
+#buscador{
+	border-color: green !important;
+}
 
-h1{
+#buscador>input[type="text"]{
+	font-size: 16px !important;
+}
+
+#txtPrincipal>h2{
+	color: #174912 !important;
+}
+#txtPrincipal>i{
+	font-size: 30px !important;
+}
+
+.center{
 	text-align: center;
 }
 
 .inicio{
-	background-image: url('../img/background.jpg');
-	background-size: 100% 100%;
-	font-family: "Open Sans";
+	/*background-image: url('../img/background.jpg');
+	background-size: 100% 100%;*/
+}
+
+p{
+	margin: 0px !important;
+	padding: 0px !important;
 }

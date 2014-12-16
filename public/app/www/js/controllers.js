@@ -24,7 +24,7 @@ angular.module('app.controllers', [])
 })
 
 .controller('ProductosCtrl', function($scope, Productos) {
-    $scope.productos = Productos.all('api/productos').then(function (data) {
+    $scope.productos = Productos.all('api/info-productos').then(function (data) {
         $scope.productos = data;
     });
 
@@ -32,16 +32,10 @@ angular.module('app.controllers', [])
 
 .controller('ProductoDetalleCtrl', function($scope, $stateParams, Productos) {
     $scope.producto = [];
-    $scope.farmacias = [{id:'1', nombre:'Nombre uno'}];
 
-    $scope.productos = Productos.get('api/productos/', $stateParams.productoId).then(function (data) {
+    $scope.productos = Productos.get('api/info-productos/', $stateParams.productoId).then(function (data) {
   		 $scope.producto = data;
-  	});
-
-    // $scope.farmacias = Productos.all('api/farmacias').then(function (data) {
-    //     $scope.farmacias = data;
-    // });
-   
+  	});   
 })
 
 .controller('FarmaciasCtrl', function($scope, Productos) {
