@@ -1,7 +1,7 @@
 <ion-view title="App-Farm">
     <ion-content class="padding inicio">
 	
-
+        <!-- Buscador -->
         <div class="list list-inset">
           <label class="item item-input" id="buscador">
             <i class="icon ion-search placeholder-icon"></i>
@@ -9,13 +9,16 @@
           </label>
         </div>
     	
+        <br>
+        
+        <!-- Frase -->
         <center ng-show="buscar" id="txtPrincipal">
             <i class="icon ion-chevron-up"></i>
             <h3><strong>¿Te sientes mal?</strong></h3>
-            <!-- <img src="img/ionic.png"> -->
             <h3>Encuentra algo que te haga sentir mejor</h3>
         </center>
         
+        <!-- Muestra los productos -->
         <div class="list">
           <a class="item item-icon-left producto" ng-repeat="producto in productos" href="#/tab/producto/{{producto.id}}">
             <i style="color:#206025;" class="icon energized ion-medkit"></i>
@@ -23,6 +26,9 @@
             <p>{{producto.descripcion}}</p>
           </a>
         </div>
+
+        <!-- Informacion -->
+        
 
 
     </ion-content>

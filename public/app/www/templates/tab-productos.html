@@ -1,12 +1,6 @@
 <ion-view title="Productos">
   <ion-content>
-<!-- 
-    <div class="button-bar">
-      <a class="button"><i class="icon ion-social-usd"></i> Precio</a>
-      <a class="button"><i class="icon ion-clock"></i> Lugar</a>
-      <a class="button"><i class="icon ion-star"></i> Valorado</a>
-    </div>
- -->
+
     <div class="list">
 	    <a class="item item-thumbnail-left" ng-repeat="producto in productos" href="#/tab/producto/{{producto.id}}">
 	      <img src="img/ionic.png">
@@ -16,6 +10,7 @@
 	      <p><strong>{{producto.farmacia}}</strong></p>
         <p>{{producto.precio | currency}}</p>
 	    </a>
-	  </div>
+	</div>
+    
   </ion-content>
 </ion-view>

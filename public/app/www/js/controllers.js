@@ -1,6 +1,6 @@
 angular.module('app.controllers', [])
 
-.controller('InicioCtrl', function($scope, $log, Productos) {
+.controller('InicioCtrl', function($scope, $log, Api) {
 
     // Varible para mostrar y ocultar el logo
     $scope.buscar = true;
@@ -9,7 +9,7 @@ angular.module('app.controllers', [])
         if(valor)
         {
             $scope.buscar = false;
-            $scope.productos = Productos.get('api/busqueda/productos/', valor).then(function (data) {
+            $scope.productos = Api.get('api/busqueda/productos/', valor).then(function (data) {
                 $scope.productos = data;
             }); 
         }
@@ -23,30 +23,35 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('ProductosCtrl', function($scope, Productos) {
-    $scope.productos = Productos.all('api/info-productos').then(function (data) {
+.controller('ProductosCtrl', function($scope, Api) {
+    
+    $scope.productos = Api.all('api/info-productos').then(function (data) {
         $scope.productos = data;
     });
 
 })
 
-.controller('ProductoDetalleCtrl', function($scope, $stateParams, Productos) {
-    $scope.producto = [];
+.controller('ProductoDetalleCtrl', function($scope, $stateParams, Api) {
 
-    $scope.productos = Productos.get('api/info-productos/', $stateParams.productoId).then(function (data) {
+    $scope.producto = [];
+    $scope.productos = Api.get('api/info-productos/', $stateParams.productoId).then(function (data) {
   		 $scope.producto = data;
-  	});   
+  	});  
+
 })
 
-.controller('FarmaciasCtrl', function($scope, Productos) {
-    $scope.farmacias = Productos.all('api/farmacias').then(function (data) {
+.controller('FarmaciasCtrl', function($scope, Api) {
+
+    $scope.farmacias = Api.all('api/farmacias').then(function (data) {
         $scope.farmacias = data;
     });
+
 })
 
-.controller('FarmaciaDetalleCtrl', function($scope, $stateParams, Productos) {
+.controller('FarmaciaDetalleCtrl', function($scope, $stateParams, Api) {
+
     $scope.farmacia = [];
-    $scope.farmacias = Productos.get('api/farmacias/', $stateParams.farmaciaId).then(function (data) {
+    $scope.farmacias = Api.get('api/farmacias/', $stateParams.farmaciaId).then(function (data) {
         $scope.farmacia = data;
     });
    
