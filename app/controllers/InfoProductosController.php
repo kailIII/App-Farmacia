@@ -5,7 +5,7 @@ class InfoProductosController extends BaseController {
 	public function index()
 	{
 
-		$infoProductos = InfoProductos::all();
+		$infoProductos = InfoProductos::paginate(6);
 
 		return Response::json( $infoProductos, 200, array('content-type' => 'application/json', 'Access-Control-Allow-Origin' => '*'));
 	

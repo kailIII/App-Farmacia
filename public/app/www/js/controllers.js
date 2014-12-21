@@ -2,15 +2,18 @@ angular.module('app.controllers', [])
 
 .controller('InicioCtrl', function($scope, $log, Api) {
 
-    // Varible para mostrar y ocultar el logo
+    // Varible para mostrar y ocultar el logo y el loading
     $scope.buscar = true;
+    $scope.isLoading = false;
 
     $scope.cargarProductos = function(valor){
         if(valor)
         {
             $scope.buscar = false;
+            $scope.isLoading = true;
             $scope.productos = Api.get('api/busqueda/productos/', valor).then(function (data) {
                 $scope.productos = data;
+                $scope.isLoading = false;
             }); 
         }
         else
@@ -23,11 +26,19 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('ProductosCtrl', function($scope, Api) {
-    
-    $scope.productos = Api.all('api/info-productos').then(function (data) {
-        $scope.productos = data;
-    });
+.controller('ProductosCtrl', function($scope, $log, Api) {
+
+    $scope.productos = [];
+     $scope.page=1;
+     $scope.loadMore = function() {
+
+        Api.get('api/info-productos?page='+$scope.page).then(function (items) {
+            $scope.productos = $scope.productos.concat(items.data);
+             $scope.$broadcast('scroll.infiniteScrollComplete');
+             $scope.page +=1;
+        });
+        
+    }
 
 })
 

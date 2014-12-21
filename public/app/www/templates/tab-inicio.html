@@ -8,6 +8,11 @@
             <input type="search" placeholder="Busca algo que te haga sentir mejor" ng-model="producto" ng-change="cargarProductos(producto)">
           </label>
         </div>
+
+        <!-- Loading -->
+        <div class="center loading" ng-if="isLoading">
+            <i class="ion-load-c"></i>
+        </div>    
     	
         <br>
         
@@ -19,7 +24,7 @@
         </center>
         
         <!-- Muestra los productos -->
-        <div class="list">
+        <div class="list" ng-hide="isLoading">
           <a class="item item-icon-left producto" ng-repeat="producto in productos" href="#/tab/producto/{{producto.id}}">
             <i style="color:#206025;" class="icon energized ion-medkit"></i>
             <h2>{{producto.nombre}}</h2>
