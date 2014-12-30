@@ -1,0 +1,38 @@
+
+<ion-view title="{{sucursal.nombre}}">
+  <ion-content has-header="true" padding="true">
+
+<ion-nav-bar class="bar-positive nav-title-slide-ios7">
+      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+        Atras
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    
+	<div class="list card">
+  		<div class="item item-divider">
+	  		<h2 class="center">{{sucursal.nombre}}</h2> 
+	  	</div>
+	    <ul class="list">
+
+	      <li class="item item-icon-left">
+	        <i class="icon ion-email"></i>
+	        <p>{{sucursal.email}}</p>
+	      </li>
+	      <li class="item item-icon-left">
+	        <i class="icon ion-ios7-telephone"></i>
+	        <p>{{sucursal.telefono}}</p>
+	      </li>
+	      <li class="item item-icon-left">
+	        <i class="icon ion-map"></i>
+	        <p>{{sucursal.direccion}}</p>
+	      </li>
+	      <li class="item item-icon-left">
+	        <i class="icon ion-map"></i>
+	        <p>{{sucursal.municipios.nombre}}</p>
+	      </li>
+
+	    </ul>
+	</div>
+
+  </ion-content>
+</ion-view>
