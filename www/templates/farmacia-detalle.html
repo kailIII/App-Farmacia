@@ -10,7 +10,7 @@
     
 	<div class="list card">
 	  		<div class="item item-divider">
-		  		<h2 class="center">{{farmacia.nombre}}</h2> 
+		  		<h2 class="center"><strong> {{ farmacia.nombre }} </strong></h2> 
 		  	</div>
 		    <ul class="list">
 
@@ -27,7 +27,7 @@
 		        <p>{{farmacia.direccion}}</p>
 		      </li>
 		      <li class="item item-icon-left">
-		        <i class="icon ion-social-facebook"></i>
+		        <i class="icon ion-bookmark"></i>
 		        <p>{{farmacia.web}}</p>
 		      </li>
 
@@ -41,7 +41,7 @@
 	  	<ion-list>
 	  	    <div class="list">
 	  		    <a class="item item-button-right" ng-repeat="sucursal in sucursales" href="#/tab/sucursal/{{sucursal.id}}">
-	  		       {{ sucursal.nombre }} <small> en {{ sucursal.municipios.nombre }}</small>
+	  		       <strong> {{ sucursal.nombre }} </strong> <small> en {{ sucursal.municipios.nombre }}</small>
 	  		       <button class="button sinBorde">
 	  		         <i class="ion-chevron-right"></i>
 	  		       </button>

@@ -35,21 +35,19 @@ angular.module('app.controllers', [])
 
         Api.all('app/productos?page='+ $scope.page).then(function (items) {
             $scope.productos = $scope.productos.concat(items.data);
-             $scope.$broadcast('scroll.infiniteScrollComplete');
-             $scope.page += 1;
-
-             if (items.last_page == $scope.page) {$scope.noMoreItemsAvailable = true};
-             
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+            if (items.last_page == $scope.page) {$scope.noMoreItemsAvailable = true};
+            $scope.page += 1;            
         });
         
     }
 
 })
 
-.controller('ProductoDetalleCtrl', function($scope, $stateParams, Api) {
+.controller('ProductoDetalleCtrl', function($scope, $log, $stateParams, Api) {
 
     $scope.producto = [];
-    $scope.farmacias = [];
+    $scope.sucursales = [];
     
     Api.get('app/producto/', $stateParams.productoId).then(function (data) {
   		 $scope.producto = data;
@@ -57,8 +55,8 @@ angular.module('app.controllers', [])
   	});  
 
     $scope.disponible = function() {
-        Api.get('app/farmaciasproductos', $stateParams.productoId).then(function (items) {
-         $scope.farmacias = items.data;
+        Api.get('app/productodetalle/', $stateParams.productoId).then(function (data) {
+         $scope.sucursales = data;
         });
     }; 
 
@@ -74,10 +72,8 @@ angular.module('app.controllers', [])
         Api.all('app/farmacias?page='+$scope.page).then(function (items) {
             $scope.farmacias = $scope.farmacias.concat(items.data);
             $scope.$broadcast('scroll.infiniteScrollComplete');
-            $scope.page +=1;
-
             if (items.last_page == $scope.page) {$scope.noMoreItemsAvailable = true};
-
+            $scope.page +=1;
         });
         
     }

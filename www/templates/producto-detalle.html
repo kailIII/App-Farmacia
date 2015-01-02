@@ -5,7 +5,7 @@
 	<!-- Detalles del Producto -->
 	<div class="list card">
 	  	<div class="center item item-divider">
-		  	<h2>{{producto.nombre}}</h2>
+		  	<h2><strong> {{producto.nombre}} </strong></h2>
 	  	</div>
 	  	<div class="item item-text-wrap">
 		    <p>{{producto.descripcion}}</p>
@@ -18,8 +18,10 @@
 	<div class="list card">
 	  	<ion-list>
 	  	    <div class="list">
-	  		    <a class="item item-button-right" ng-repeat="farmacia in farmacias" href="#/tab/farmacia/{{farmacia.id}}">
-	  		       {{ farmacia.nombre }}
+	  		    <a class="item item-button-right" ng-repeat="sucursal in sucursales" href="#/tab/sucursal/{{sucursal.id}}">
+	  		       <strong>{{ sucursal.nombre }} </strong> 
+	  		       <small> en {{ sucursal.municipio }} </small>
+	  		        <span class="badge badge-assertive">{{ sucursal.precio | currency }}</span>
 	  		       <button class="button sinBorde">
 	  		         <i class="ion-chevron-right"></i>
 	  		       </button>
