@@ -25,7 +25,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
       templateUrl: "templates/tabs.html"
     })
     .state('tab.inicio', {
-      url: '/inicio',
+      url: '/tab-inicio',
       views: {
         'tab-inicio': {
           templateUrl: 'templates/tab-inicio.html',
@@ -34,7 +34,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
       }
     })
     .state('tab.productos', {
-      url: '/productos',
+      url: '/tab-productos',
       views: {
         'tab-productos': {
           templateUrl: 'templates/tab-productos.html',
@@ -52,7 +52,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
       }
     })
     .state('tab.farmacias', {
-      url: '/farmacias',
+      url: '/tab-farmacias',
       views: {
         'tab-farmacias': {
           templateUrl: 'templates/tab-farmacias.html',
@@ -79,7 +79,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
       }
     });
 
-  $urlRouterProvider.otherwise('/tab/inicio');
+  $urlRouterProvider.otherwise('/tab/tab-inicio');
 
 });
 

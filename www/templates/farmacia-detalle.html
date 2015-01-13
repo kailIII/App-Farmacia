@@ -1,51 +1,45 @@
 
 <ion-view title="{{farmacia.nombre}}">
   <ion-content has-header="true" padding="true">
-
-<ion-nav-bar class="bar-positive nav-title-slide-ios7">
-      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
-        Atras
-      </ion-nav-back-button>
-    </ion-nav-bar>
     
+    <!-- Informacion de la farmacia -->
 	<div class="list card">
-	  		<div class="item item-divider">
-		  		<h2 class="center"><strong> {{ farmacia.nombre }} </strong></h2> 
-		  	</div>
-		    <ul class="list">
-
-		      <li class="item item-icon-left">
-		        <i class="icon ion-email"></i>
-		        <p>{{farmacia.email}}</p>
-		      </li>
-		      <li class="item item-icon-left">
-		        <i class="icon ion-ios7-telephone"></i>
-		        <p>{{farmacia.telefono}}</p>
-		      </li>
-		      <li class="item item-icon-left">
-		        <i class="icon ion-map"></i>
-		        <p>{{farmacia.direccion}}</p>
-		      </li>
-		      <li class="item item-icon-left">
-		        <i class="icon ion-bookmark"></i>
-		        <p>{{farmacia.web}}</p>
-		      </li>
-
-		    </ul>
+  		<div class="item item-divider center">
+	  		<h2><strong> {{ farmacia.nombre }} </strong></h2>
+	  		<img src="img/logo.png" alt="{{farmacia.nombre}}"> 
+	  	</div>
+	    <ul class="list">
+			<h5 class="center">Comunicate con nosotros:</h5>
+		    <li class="item item-icon-left">
+		      	<i class="icon ion-email"></i>
+		      	<p>{{farmacia.email}}</p>
+		    </li>
+	      	<li class="item item-icon-left">
+	        	<i class="icon ion-ios7-telephone"></i>
+	        	<p>{{farmacia.telefono}}</p>
+	      	</li>
+	      	<h5 class="center">O vicitanos en:</h5>
+	      	<li class="item item-icon-left">
+	        	<i class="icon ion-map"></i>
+	        	<p>{{farmacia.direccion}} {{', '}} {{farmacia.municipio + ', '}} {{farmacia.departamento + '.'}}</p>
+	      	</li>
+	      	<li class="item item-icon-left">
+	        	<i class="icon ion-earth"></i>
+	        	<p>{{farmacia.web}}</p>
+	      	</li>
+	    </ul>
 	</div>
 
 	<h3 class="center">Sucursales:</h3 >
 	
-	<!-- Farmacias que ofrecen el producto -->
+	<!-- Sucursales que ofrecen el producto -->
 	<div class="list card">
 	  	<ion-list>
 	  	    <div class="list">
 	  		    <a class="item item-button-right" ng-repeat="sucursal in sucursales" href="#/tab/sucursal/{{sucursal.id}}">
-	  		       <strong> {{ sucursal.nombre }} </strong> <small> en {{ sucursal.municipios.nombre }}</small>
-	  		       <button class="button sinBorde">
-	  		         <i class="ion-chevron-right"></i>
-	  		       </button>
-	  		     </a>
+	  		       	<strong> {{ sucursal.nombre }} </strong> <small> en {{ sucursal.municipio }}</small>
+	  		       	<button class="button sinBorde"><i class="ion-chevron-right"></i></button>
+	  		    </a>
 	  		</div>
 	  	</ion-list>
 	</div>

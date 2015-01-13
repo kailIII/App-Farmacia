@@ -1,19 +1,14 @@
 
 <ion-view title="{{sucursal.nombre}}">
   <ion-content has-header="true" padding="true">
-
-<ion-nav-bar class="bar-positive nav-title-slide-ios7">
-      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
-        Atras
-      </ion-nav-back-button>
-    </ion-nav-bar>
     
 	<div class="list card">
-  		<div class="item item-divider">
-	  		<h2 class="center"><strong> {{ sucursal.nombre }} </strong></h2> 
+  		<div class="item item-divider center">
+	  		<h2><strong> {{ sucursal.nombre }} </strong></h2>
+	  		<img src="img/logo.png" alt="{{farmacia.nombre}}"> 
 	  	</div>
 	    <ul class="list">
-
+	  	<h5 class="center">Comunicate con nosotros:</h5>
 	      <li class="item item-icon-left">
 	        <i class="icon ion-email"></i>
 	        <p>{{sucursal.email}}</p>
@@ -22,15 +17,11 @@
 	        <i class="icon ion-ios7-telephone"></i>
 	        <p>{{sucursal.telefono}}</p>
 	      </li>
+	    <h5 class="center">O vicitanos en:</h5>
 	      <li class="item item-icon-left">
 	        <i class="icon ion-map"></i>
-	        <p>{{sucursal.direccion}}</p>
+	        <p>{{sucursal.direccion}} {{', '}} {{sucursal.municipio}} {{', '}} {{sucursal.departamento + '.'}}</p>
 	      </li>
-	      <li class="item item-icon-left">
-	        <i class="icon ion-map"></i>
-	        <p>{{sucursal.municipios.nombre}}</p>
-	      </li>
-
 	    </ul>
 	</div>
 
